@@ -19,7 +19,7 @@ import './App.css';
 //   }
 // ];
 
-var todos = JSON.parse(localStorage.getItem('todos')) || [];
+var todos = JSON.parse(localStorage.getItem('todos_doto888')) || [];
 console.log("localStorage", todos);
 
 export default class App extends React.Component {
@@ -70,7 +70,7 @@ export default class App extends React.Component {
     this.setState({ todos: this.state.todos});
 
     // save localStorage
-    localStorage.setItem('todos', JSON.stringify(todos));
+    localStorage.setItem('todos_doto888', JSON.stringify(todos));
 
   }
 
@@ -83,7 +83,7 @@ export default class App extends React.Component {
     this.setState({todos:this.state.todos});
 
     // save localStorage
-    localStorage.setItem('todos', JSON.stringify(todos));
+    localStorage.setItem('todos_doto888', JSON.stringify(todos));
 
   }
 
@@ -91,6 +91,6 @@ export default class App extends React.Component {
     _.remove(this.state.todos, todo => todo.task === taskToDelete);
     this.setState({todos:this.state.todos});
     // save localStorage
-    localStorage.setItem('todos', JSON.stringify(todos));
+    localStorage.setItem('todos_doto888', JSON.stringify(todos));
   }
 }
