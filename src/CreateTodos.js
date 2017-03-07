@@ -20,12 +20,23 @@ export default class CreateTodos extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleCreate.bind(this)} className="header">
+      <form onSubmit={this.handleCreate.bind(this)} >
         <input
+              className="form-control"
               type="text"
-              placeholder="Enter task?"
+              placeholder="Task . . . ?"
               ref="_createInput" />
-        <button>Create</button>
+        <input
+          className="form-control"
+          type="text"
+          placeholder="Description"
+          ref="_desc"/>
+        <input
+          className="form-control"
+          type="datetime-local"
+          ref="_date" />
+        <button className="btn btn-primary form-control">Create</button>
+
         {this.renderError()}
       </form>
      );
@@ -37,19 +48,31 @@ export default class CreateTodos extends React.Component {
     const createInput = this.refs._createInput;
     const task = createInput.value;
     const validateInput = this.validateInput(task);
+    const _date = this.refs._date.value;
+    const _desc = this.refs._desc.value;
+    const validateDateInput = this.validateDateInput(_date);
 
     if(validateInput) {
       this.setState({error:validateInput});
       return;
     }
+    if(validateDateInput) {
+      this.setState({error:validateDateInput})
+      return;
+    }
     this.setState({error:null});
-    this.props.createTask(task);
+    this.props.createTask(task,_date,_desc);
     this.refs._createInput.value = "";
+    this.refs._date.value = "";
+    this.refs._desc.value = "";
   }
-
+  validateDateInput(date) {
+    if(!date) {
+      return 'Please enter a date/time';
+    }
+    return null;
+  }
   validateInput(task) {
-    console.log(task);
-    console.log(this.props.todos)
     if(!task) {
       return 'Please enter a task.';
     }

@@ -3,59 +3,38 @@ body {
   background-color: #66CCFF;
   font-family: sans-serif;
 }
-
-.todoListMain .header button{
-  padding: 10px;
-  font-size: 16px;
-  margin: 10px;
-  background-color: #0066FF;
-  color: #FFF;
-  border: 2px solid #0066FF;
+input {
+  margin-top: 5px;
 }
 
-.todoListMain .header button:hover {
-  background-color: #003399;
-  border: 2px solid #003399;
-  cursor: pointer;
+button {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
-
-.todoListMain .header input {
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid #FFF;
-}
-
 table {
-color: #333; /* Lighten up font color */
-font-family: Helvetica, Arial, sans-serif; /* Nicer font */
-width: 640px;
-border-collapse:
-collapse; border-spacing: 0;
+  margin-top: 5px;
 }
 
-table button {
-  padding: 2px;
-  font-size: 10px;
-  margin: 5px;
-  background-color: #0066FF;
-  color: #FFF;
-  border: 2px solid #0066FF;
+td button {
+  margin: 3px;
 }
-
-table button:hover {
-  background-color: #003399;
-  border: 2px solid #003399;
-  cursor: pointer;
-}
-
-td, th { border: 1px solid #CCC; height: 30px; } /* Make cells a bit taller */
 
 th {
-background: #F3F3F3; /* Light grey background */
-font-weight: bold; /* Make sure they're bold */
+  text-align: center;
 }
+p {
+  margin-bottom: 2px;
+}
+.task_title {
+  font-size: 15px;
 
-td {
-background: #FAFAFA; /* Lighter grey background */
-text-align: center; /* Center our text */
+}
+.task_desc {
+  font-size: 15px;
+
+}
+.task_date {
+  font-size: 15px;
+  color: #9a9a9a;
+
 }
